@@ -4,7 +4,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import BrandBand from './components/BrandBand';
 import ReviewCards from './components/ReviewCards';
+import Stats from './components/Stats';
 import Videos from './components/Videos';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,10 +15,9 @@ function App() {
       <Hero />
       <BrandBand />
       <ReviewCards />
+      <Stats />
       <Videos />
-      <main className="main-content">
-        {/* Other components and content will go here */}
-      </main>
+      <Footer />
     </div>
   );
 }
