@@ -1,11 +1,14 @@
 import React from 'react';
+import logo from '../assets/images/logo.png'; // Adjust the path to your logo
 import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/">ACADIA COMMERCE</a>
+        <a href="/">
+          <img src={logo} alt="Scaleonics Logo" />
+        </a>
       </div>
       <ul className="navbar-links">
         <li><a href="/">Home</a></li>
