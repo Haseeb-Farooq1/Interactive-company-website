@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 80px); /* Assuming navbar height is 80px */
   text-align: center;
   color: white;
   background: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
   position: relative;
+  margin-top: -80px; /* Pull hero up to fill space from padding */
 }
-
 .hero::before {
   content: '';
   position: absolute;
