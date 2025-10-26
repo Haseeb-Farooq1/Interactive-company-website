@@ -28,18 +28,95 @@
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.hero-title .tired-of-gambling {
-  color: #ff8c00; /* Metallic Orange */
-  font-size: 2rem;
+.hero-title .main-heading {
+  color: black;
+  font-size: 4rem;
   display: block;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.animated-text {
+  color: #ff8c00; /* Metallic Orange */
+  background: linear-gradient(45deg, #ff8c00, #ffA500, #ff6600, #ff8c00);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  font-weight: bold;
+  display: inline-block;
+  min-height: 1.2em;
+  text-shadow: none;
+  animation: gradient-shift 3s ease infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.cursor {
+  color: #ff8c00;
+  -webkit-text-fill-color: #ff8c00;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-title .main-heading {
+    font-size: 2.5rem;
+  }
+  
+  .animated-text {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 90%;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-title .main-heading {
+    font-size: 2rem;
+  }
+  
+  .animated-text {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  max-width: 700px;
+  margin: 2rem auto 2rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
 }
 
 .hero-button {

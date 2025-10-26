@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import './Stats.css';
 

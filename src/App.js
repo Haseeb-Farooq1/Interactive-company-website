@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VideoSection from './components/VideoSection';
 import BrandBand from './components/BrandBand';
-import ReviewCards from './components/ReviewCards';
+import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
 import Videos from './components/Videos';
 import Footer from './components/Footer';
@@ -13,8 +14,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
+      <VideoSection />
       <BrandBand />
-      <ReviewCards />
+      <Testimonials />
       <Stats />
       <Videos />
       <Footer />
