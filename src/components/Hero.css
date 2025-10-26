@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  height: calc(100vh - 80px); /* Assuming navbar height is 80px */
   text-align: center;
   color: white;
   background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f1419 75%, #000000 100%);
@@ -10,8 +11,8 @@
   animation: gradient-flow 15s ease infinite;
   position: relative;
   overflow: hidden;
+  margin-top: -80px; /* Pull hero up to fill space from padding */
 }
-
 .hero::before {
   content: '';
   position: absolute;
