@@ -57,12 +57,15 @@ const testimonials = [
 
 const Testimonials = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const nextTestimonial = () => {
+    setDirection(1);
     setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
+    setDirection(-1);
     setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
@@ -84,14 +87,20 @@ const Testimonials = () => {
 
         <div className="testimonials-content">
           <div className="testimonials-main">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={activeTestimonial}
+                custom={direction}
                 className="testimonial-card"
-                initial={{ opacity: 0, x: 100 }}
+                initial={{ opacity: 0, x: direction > 0 ? 300 : -300 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0, x: direction > 0 ? -300 : 300 }}
+                transition={{ 
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30
+                }}
               >
                 <div className="testimonial-quote">
                   <span className="quote-mark">"</span>
@@ -153,7 +162,10 @@ const Testimonials = () => {
               <motion.div
                 key={testimonial.id}
                 className={`testimonial-preview ${index === activeTestimonial ? 'active' : ''}`}
-                onClick={() => setActiveTestimonial(index)}
+                onClick={() => {
+                  setDirection(index > activeTestimonial ? 1 : -1);
+                  setActiveTestimonial(index);
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
