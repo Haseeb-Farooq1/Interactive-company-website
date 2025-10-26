@@ -3,9 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VideoSection from './components/VideoSection';
 import BrandBand from './components/BrandBand';
-import ReviewCards from './components/ReviewCards';
+import Testimonials from './components/Testimonials';
+import Stats from './components/Stats';
 import Videos from './components/Videos';
+import Footer from './components/Footer';
 import Services from './pages/Services';
 import ScalonicsPromise from './pages/ScalonicsPromise';
 import SuccessStories from './pages/SuccessStories';
@@ -22,8 +25,10 @@ function App() {
             <Route path="/" element={
               <>
                 <Hero />
+                <VideoSection />
                 <BrandBand />
-                <ReviewCards />
+                <Testimonials />
+                <Stats />
                 <Videos />
               </>
             } />
@@ -34,6 +39,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );
