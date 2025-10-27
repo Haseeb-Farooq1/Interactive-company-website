@@ -1,5 +1,5 @@
 .main-content {
-  padding-top: 80px; /* Adjust this value based on your navbar's height */
+  padding-top: 80px;
 }
 
 .App {
@@ -8,18 +8,20 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fff;
-  color: #333;
+  background: #0a0e1a;
+  color: #FFFFFF;
+  min-height: 100vh;
 }
 
-/* Add some global styles for a more polished look */
 body {
   margin: 0;
   box-sizing: border-box;
+  background: #0a0e1a;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 a {

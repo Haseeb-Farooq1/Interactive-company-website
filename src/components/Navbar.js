@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/images/logo.png'; // Adjust the path to your logo
+import logo from '../assets/logo.png'; // Corrected path to your logo
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -50,7 +50,6 @@ const Navbar = () => {
           </div>
         </li>
         <li><Link to="/scalonics-promise">Scalonics Promise</Link></li>
-        <li><Link to="/success-stories">Success Stories</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
       </ul>

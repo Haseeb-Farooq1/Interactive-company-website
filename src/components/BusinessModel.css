@@ -1,0 +1,544 @@
+﻿.business-model-section {
+  width: 100%;
+  background: transparent;
+  padding: 6rem 2rem 8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.business-model-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 4rem;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.business-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.business-card {
+  background: linear-gradient(180deg, #0a0e1a 0%, #0f1318 100%);
+  border: 2px solid rgba(255, 102, 0, 0.4);
+  border-radius: 20px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.business-card:hover {
+  border-color: rgba(255, 102, 0, 0.8);
+  box-shadow: 0 10px 40px rgba(255, 102, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.card-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #ff6600, #ff8800);
+  opacity: 0;
+  z-index: -1;
+  filter: blur(20px);
+  transition: opacity 0.4s ease;
+}
+
+.business-card:hover .card-glow {
+  opacity: 0.3;
+}
+
+.card-number {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  line-height: 1;
+}
+
+.card-visual-section {
+  width: 100%;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 102, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* CARD 1 - CHAOS CONTROL */
+.visual-chaos {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chaos-center {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dollar-icon {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #ff6600;
+  z-index: 5;
+  text-shadow: 0 0 40px rgba(255, 102, 0, 0.8);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.orbit {
+  position: absolute;
+  border: 2px solid rgba(255, 102, 0, 0.3);
+  border-radius: 50%;
+  animation: spin 8s linear infinite;
+}
+
+.orbit {
+  width: 140px;
+  height: 140px;
+}
+
+.orbit-2 {
+  width: 190px;
+  height: 190px;
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+.orbit-3 {
+  width: 240px;
+  height: 240px;
+  animation-duration: 16s;
+  border-color: rgba(255, 102, 0, 0.2);
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.float-elem {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  animation: float-around 6s ease-in-out infinite;
+}
+
+.float-elem svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.6));
+}
+
+.float-1 {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.float-2 {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  animation-delay: 1.5s;
+}
+
+.float-3 {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 3s;
+}
+
+.float-4 {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  animation-delay: 4.5s;
+}
+
+.control-label {
+  position: absolute;
+  bottom: 30px;
+  background: rgba(255, 102, 0, 0.15);
+  border: 1px solid rgba(255, 102, 0, 0.5);
+  padding: 0.6rem 2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff6600;
+  letter-spacing: 3px;
+}
+
+/* CARD 2 - SCALE */
+.visual-scale {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.conveyor {
+  position: relative;
+  width: 80%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amazon-package {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
+  border: 3px solid #ff9900;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: package-hover 2s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 153, 0, 0.3);
+}
+
+.amazon-smile {
+  width: 80%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.package-text {
+  font-weight: 700;
+  color: #ff9900;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.conveyor-glow {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(255, 102, 0, 0.4) 20%,
+    rgba(255, 102, 0, 1) 50%,
+    rgba(255, 102, 0, 0.4) 80%,
+    transparent
+  );
+  border-radius: 3px;
+  animation: conveyor-move 2s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+}
+
+.process-steps {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.step {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 102, 0, 0.1);
+  border: 2px solid rgba(255, 102, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  animation: step-pulse 2s ease-in-out infinite;
+}
+
+.step svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.4));
+}
+
+.step:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.step:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.step:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.shield-icon {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 102, 0, 0.15);
+  border: 2px solid rgba(255, 102, 0, 0.6);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.shield-icon svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.6));
+}
+
+/* CARD 3 - GROWTH */
+.visual-growth {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.growth-arrow-container {
+  width: 70%;
+  height: 60%;
+  position: relative;
+}
+
+.growth-arrow-svg {
+  width: 100%;
+  height: 100%;
+  animation: arrow-draw 3s ease-in-out infinite;
+}
+
+.dollar-growth {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #ff6600;
+  opacity: 0.6;
+  text-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 102, 0, 0.1);
+  border: 2px solid rgba(255, 102, 0, 0.5);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+.badge-icon-svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.6));
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ff6600;
+  letter-spacing: 2px;
+}
+
+.profit-badge {
+  top: 30px;
+  left: 30px;
+}
+
+.mission-badge {
+  bottom: 30px;
+  right: 30px;
+  animation-delay: 1s;
+}
+
+/* CARD CONTENT */
+.card-content {
+  padding: 2.5rem 2rem 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+/* ANIMATIONS */
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(255, 102, 0, 1);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-around {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10px, -10px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(20px, 0) scale(1);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(10px, 10px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes package-hover {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes conveyor-move {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes step-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes arrow-draw {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .business-cards-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .business-model-section {
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .business-model-title {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .card-number {
+    font-size: 4rem;
+  }
+
+  .card-visual-section {
+    height: 280px;
+  }
+
+  .chaos-center {
+    width: 160px;
+    height: 160px;
+  }
+
+  .dollar-icon {
+    font-size: 3.5rem;
+  }
+
+  .float-elem {
+    width: 28px;
+    height: 28px;
+  }
+
+  .shield-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .dollar-growth {
+    font-size: 4rem;
+  }
+}

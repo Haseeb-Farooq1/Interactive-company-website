@@ -1,0 +1,91 @@
+.global-starfield {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Three layers for parallax/depth */
+.global-stars, .global-stars2, .global-stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform-origin: center;
+}
+
+.global-stars {
+  background: transparent;
+  box-shadow:
+    200px 300px #FFF, 400px 600px #FFF, 800px 200px #FFF, 1200px 900px #FFF,
+    600px 400px #FFF, 100px 1200px #FFF, 1400px 150px #FFF, 1600px 900px #FFF,
+    300px 900px #FFF, 950px 1100px #FFF, 400px 300px #FFF, 50px 500px #FFF,
+    700px 100px #FFF, 1300px 400px #FFF, 250px 800px #FFF, 1500px 500px #FFF,
+    900px 700px #FFF, 1700px 300px #FFF, 150px 950px #FFF, 1100px 650px #FFF,
+    450px 150px #FFF, 850px 1050px #FFF, 1450px 250px #FFF, 550px 750px #FFF,
+    1650px 1150px #FFF, 350px 550px #FFF, 1250px 850px #FFF, 750px 450px #FFF,
+    1550px 1050px #FFF, 200px 650px #FFF, 1000px 350px #FFF, 500px 950px #FFF,
+    1800px 600px #FFF, 300px 1100px #FFF, 1400px 800px #FFF, 650px 200px #FFF,
+    1150px 1300px #FFF, 480px 380px #FFF, 1320px 580px #FFF, 720px 880px #FFF,
+    1620px 180px #FFF, 220px 1380px #FFF, 1520px 680px #FFF, 820px 980px #FFF,
+    120px 280px #FFF, 1420px 1180px #FFF, 420px 1480px #FFF, 1720px 780px #FFF;
+  width: 2px;
+  height: 2px;
+  transform: translateY(0);
+  animation: globalStarMove 140s linear infinite;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.9));
+}
+
+.global-stars2 {
+  background: transparent;
+  box-shadow:
+    350px 250px #FF8C42, 650px 550px #FF6B35, 1000px 900px #FF8C42, 1400px 1300px #FF6B35,
+    200px 700px #FFF, 800px 1200px #FFF, 1100px 200px #FFF, 1500px 700px #FFF,
+    450px 450px #FF8C42, 950px 350px #FF6B35, 1350px 1050px #FF8C42, 250px 1150px #FF6B35,
+    750px 850px #FFF, 1550px 250px #FFF, 550px 1050px #FFF, 1250px 550px #FFF,
+    150px 350px #FF8C42, 850px 650px #FF6B35, 1650px 850px #FF8C42, 350px 1250px #FF6B35,
+    650px 150px #FFF, 1150px 950px #FFF, 450px 550px #FFF, 1450px 1150px #FFF,
+    100px 850px #FFA500, 900px 450px #FFA500, 1300px 750px #FFA500, 700px 1250px #FFA500,
+    1750px 450px #FF8C42, 280px 980px #FF6B35, 1580px 180px #FF8C42, 580px 1380px #FF6B35,
+    380px 680px #FFF, 1680px 580px #FFF, 280px 180px #FFF, 1180px 1480px #FFF,
+    920px 220px #FFA500, 1420px 1020px #FFA500, 520px 820px #FFA500, 1820px 320px #FFA500,
+    180px 1180px #FF8C42, 1280px 280px #FF6B35, 480px 1080px #FF8C42, 1480px 880px #FF6B35;
+  width: 3px;
+  height: 3px;
+  animation: globalStarMove 200s linear infinite;
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(255,140,66,1)) drop-shadow(0 0 6px rgba(255,140,66,0.5));
+}
+
+.global-stars3 {
+  background: transparent;
+  box-shadow:
+    250px 450px #FFF, 750px 350px #FFF, 1250px 650px #FFF, 1750px 950px #FFF,
+    350px 1150px #FF8C42, 950px 1450px #FF6B35, 1450px 550px #FF8C42, 550px 1350px #FF6B35,
+    150px 750px #FFF, 1050px 250px #FFF, 650px 1050px #FFF, 1550px 1250px #FFF,
+    400px 300px #FFA500, 1200px 800px #FFA500, 800px 500px #FFA500, 1600px 100px #FFA500,
+    500px 650px #FF8C42, 1100px 1100px #FF6B35, 300px 200px #FF8C42, 1400px 900px #FF6B35,
+    700px 950px #FFF, 1300px 350px #FFF, 200px 550px #FFF, 1500px 1450px #FFF,
+    850px 150px #FFA500, 1350px 1350px #FFA500, 450px 950px #FFA500, 1650px 650px #FFA500,
+    100px 1100px #FF8C42, 1700px 200px #FF6B35, 600px 1400px #FF8C42, 1000px 600px #FF6B35,
+    320px 820px #FFF, 1520px 420px #FFF, 920px 1220px #FFF, 1820px 1020px #FFF,
+    180px 380px #FFA500, 1180px 1380px #FFA500, 780px 780px #FFA500, 1380px 80px #FFA500;
+  width: 4px;
+  height: 4px;
+  animation: globalStarMove 260s linear infinite;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(255,165,0,1)) drop-shadow(0 0 10px rgba(255,140,66,0.8)) drop-shadow(0 0 15px rgba(255,107,53,0.4));
+}
+
+@keyframes globalStarMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-1200px); }
+}
+
+/* Make sure content sits above the starfield */
+body, #root, .App {
+  position: relative;
+  z-index: 1;
+}

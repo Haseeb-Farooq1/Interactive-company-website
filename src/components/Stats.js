@@ -5,10 +5,10 @@ import { gsap } from 'gsap';
 import './Stats.css';
 
 const statsData = [
-  { value: 4.95, label: 'Annual Amazon Sales', unit: 'M+', icon: 'https://logo.clearbit.com/amazon.com' },
-  { value: 100, label: 'Positive Seller Rating', unit: '%', icon: 'star' },
-  { value: 27, label: 'Brand Partners', unit: '+', icon: 'chart' },
-  { value: 108.4, label: 'Units Processed Annually', unit: 'K', icon: 'box' },
+  { value: 12.7, label: 'Inventory we have bought', unit: 'M', icon: '' },
+  { value: 99.7, label: 'Positive Seller Rating', unit: '%', icon: '' },
+  { value: 31, label: 'Brand Partners', unit: '+', icon: '' },
+  { value: 1.2, label: 'Units processed annually', unit: 'M+', icon: '' },
 ];
 
 const AnimatedNumber = ({ value, unit }) => {
@@ -27,7 +27,7 @@ const AnimatedNumber = ({ value, unit }) => {
         duration: 2,
         ease: "power2.out",
         onUpdate: () => {
-          element.textContent = `${target.val.toFixed(value % 1 === 0 ? 0 : 2)}${unit}`;
+          element.textContent = `${target.val.toFixed(value % 1 === 0 ? 0 : 1)}${unit}`;
         },
       });
     }
@@ -46,26 +46,50 @@ const AnimatedNumber = ({ value, unit }) => {
 const Stats = () => {
   return (
     <div className="stats-section">
-      <div className="stats-container">
-        {statsData.map((stat, index) => (
-          <motion.div 
-            className="stat-item" 
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="stat-icon">
-              {stat.icon === 'star' && <span className="star-icon">★★★★</span>}
-              {stat.icon === 'chart' && <span className="chart-icon">📈</span>}
-              {stat.icon === 'box' && <span className="box-icon">📦</span>}
-              {stat.icon.startsWith('http') && <img src={stat.icon} alt="icon" />}
-            </div>
-            <AnimatedNumber value={stat.value} unit={stat.unit} />
-            <p className="stats-label">{stat.label}</p>
-          </motion.div>
-        ))}
+      <h2 className="stats-main-title">OUR IMPACT BY THE NUMBERS</h2>
+
+      {/* Wavy Line with Stats */}
+      <div className="stats-wave-container">
+        <svg className="wave-line" viewBox="0 0 1200 300" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#ff6600', stopOpacity: 0.8}} />
+              <stop offset="50%" style={{stopColor: '#ff8800', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#ff6600', stopOpacity: 0.8}} />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path 
+            className="wave-path"
+            d="M 0 150 Q 150 80, 300 150 T 600 150 T 900 150 T 1200 150"
+            fill="none"
+            stroke="url(#waveGradient)"
+            strokeWidth="4"
+            filter="url(#glow)"
+          />
+        </svg>
+
+        <div className="stats-container">
+          {statsData.map((stat, index) => (
+            <motion.div 
+              className="stat-item" 
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+            >
+              <AnimatedNumber value={stat.value} unit={stat.unit} />
+              <p className="stats-label">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
