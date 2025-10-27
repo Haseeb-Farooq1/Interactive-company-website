@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/images/logo.png'; // Adjust the path to your logo
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 

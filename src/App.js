@@ -30,6 +30,7 @@ function App() {
                 <Testimonials />
                 <Stats />
                 <Videos />
+
               </>
             } />
             <Route path="/services" element={<Services />} />
@@ -44,5 +45,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
