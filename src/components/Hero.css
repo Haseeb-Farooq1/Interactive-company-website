@@ -3,23 +3,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
-  padding-top: 60px;
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 2rem;
   text-align: center;
   color: white;
-  background: #0a0e1a;
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
 
-/* Starfield animation */
+/* Remove local starfield - using global Starfield component */
 .stars, .stars2, .stars3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  display: none;
 }
 
 .stars {
@@ -151,13 +147,13 @@
   z-index: 2;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: 2px;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -167,9 +163,9 @@
 /* Circular Diagram Styles */
 .circular-diagram {
   position: relative;
-  width: 650px;
-  height: 650px;
-  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  margin: 2rem auto 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,8 +175,8 @@
 /* 3D Rotating ring with items */
 .rotating-ring-3d {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   transform-style: preserve-3d;
   animation: rotate3d 20s linear infinite;
   z-index: 20; /* Ensure items are visible above center circle */
@@ -202,14 +198,8 @@
   transform: 
     translate(-50%, -50%)
     rotateY(var(--angle))
-    translateZ(280px);
-  z-index: 10;
-}
-
-/* Items that go behind the center */
-.ring-item:nth-child(3),
-.ring-item:nth-child(4) {
-  z-index: 5;
+    translateZ(320px);
+  /* All items visible - no z-index override */
 }
 
 /* Icon box styling */
@@ -232,6 +222,13 @@
   -webkit-backface-visibility: hidden;
   width: 100%;
   height: 100%;
+  /* Counter-rotation applied via inline style to keep facing forward */
+  animation: counterRotate 20s linear infinite;
+}
+
+@keyframes counterRotate {
+  from { transform: rotateY(var(--counter-angle, 0deg)); }
+  to { transform: rotateY(calc(var(--counter-angle, 0deg) - 360deg)); }
 }
 
 .icon-box:hover {
@@ -239,7 +236,7 @@
   box-shadow: 
     0 0 40px rgba(255, 140, 66, 0.6),
     0 12px 48px rgba(0, 0, 0, 0.8);
-  transform: scale(1.08);
+  /* Keep the counter-rotation during hover, just add scale */
 }
 
 /* Icon styling */
@@ -272,8 +269,8 @@
 /* Center circle - static with enhanced design */
 .center-circle {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 320px;
+  height: 320px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -594,7 +591,7 @@
 
 /* Hero CTA Section Styles */
 .hero-cta-section {
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
   max-width: 900px;
   z-index: 2;
@@ -605,7 +602,7 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -658,19 +655,22 @@
 
 /* Video Section Styles */
 .video-section {
-  margin-top: 4rem;
+  margin: 2rem auto 0;
   max-width: 1000px;
   width: 100%;
   text-align: center;
   z-index: 2;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .video-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-shadow: 0 0 15px rgba(255, 140, 66, 0.4);
@@ -679,7 +679,8 @@
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  max-width: 900px;
+  padding-bottom: 50.625%; /* 16:9 Aspect Ratio adjusted */
   height: 0;
   overflow: hidden;
   border-radius: 16px;
@@ -688,6 +689,7 @@
     0 0 80px rgba(255, 140, 66, 0.15);
   border: 3px solid rgba(255, 140, 66, 0.5);
   background: #000;
+  margin: 0 auto;
 }
 
 .video-container iframe {

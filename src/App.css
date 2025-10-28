@@ -1,5 +1,7 @@
 .main-content {
   padding-top: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .App {
@@ -11,6 +13,10 @@
   background: #0a0e1a;
   color: #FFFFFF;
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 body {

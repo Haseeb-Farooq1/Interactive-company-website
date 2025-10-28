@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Starfield from './components/Starfield';
 import Hero from './components/Hero';
 import BrandBand from './components/BrandBand';
-import Testimonials from './components/Testimonials';
 import Stats from './components/Stats';
 import BusinessModel from './components/BusinessModel';
 import PartnerBanner from './components/PartnerBanner';
@@ -27,7 +26,6 @@ function App() {
               <>
                 <Hero />
                 <BrandBand />
-                <Testimonials />
                 <Stats />
                 <BusinessModel />
                 <PartnerBanner />

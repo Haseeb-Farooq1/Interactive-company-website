@@ -14,6 +14,8 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-sizing: border-box;
+  overflow: hidden; /* Hide both scrollbars */
 }
 
 .navbar:hover {
@@ -35,17 +37,19 @@
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem; /* Reduced gap to fit better */
   flex: 1;
   justify-content: center;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .navbar-links a {
   color: #111111;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller for better fit */
   font-weight: 500;
   transition: all 0.18s ease;
   white-space: nowrap;
@@ -58,7 +62,9 @@
 
 .navbar-cta {
   flex-shrink: 0;
-  margin-left: 1rem;
+  margin-left: auto;
+  padding-left: 1rem;
+  min-width: fit-content;
 }
 
 .navbar-cta .cta-button {

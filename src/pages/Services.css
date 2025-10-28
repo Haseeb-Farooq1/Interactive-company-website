@@ -1,6 +1,10 @@
 .services-container {
   padding: 2rem;
   text-align: center;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 }
 
 .services-hero {

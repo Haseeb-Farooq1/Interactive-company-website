@@ -58,10 +58,7 @@ const Hero = () => {
   
   return (
     <div className="hero">
-      {/* Starfield background */}
-      <div className="stars"></div>
-      <div className="stars2"></div>
-      <div className="stars3"></div>
+      {/* Using global Starfield component - no local starfield needed */}
       
       {/* Main content */}
       <div className="hero-content">
@@ -84,10 +81,11 @@ const Hero = () => {
                   className="ring-item"
                   style={{ 
                     '--angle': `${angle}deg`,
-                    '--delay': `${index * 0.2}s`
+                    '--delay': `${index * 0.2}s`,
+                    '--counter-angle': `${-angle}deg`
                   }}
                 >
-                  <div className="icon-box">
+                  <div className="icon-box" style={{ transform: `rotateY(${-angle}deg)` }}>
                     <div className="icon">
                       {item.icon}
                     </div>
