@@ -51,6 +51,205 @@
   margin: 0 auto;
 }
 
+/* Our Impact By Numbers Section */
+.impact-numbers-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f1419 75%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.impact-stats-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flowing-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.wave-line {
+  width: 100%;
+  height: 200px;
+  filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.6));
+}
+
+.impact-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0;
+}
+
+.impact-stat {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.impact-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.impact-label {
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: 400;
+  max-width: 150px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+/* Our Collective Wins Section */
+.collective-wins-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #16213e 50%, #0f1419 75%, #000000 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wins-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.wins-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brands-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.brand-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+}
+
+.brand-logos::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35, #ff8c42, #ffa500, #ff8c42, #ff6b35);
+  border-radius: 2px;
+  animation: glow-flow 3s ease-in-out infinite;
+}
+
+@keyframes glow-flow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+    transform: scaleX(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+    transform: scaleX(1.02);
+  }
+}
+
+.brand-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.brand-logo:hover {
+  color: #ff8c42;
+  transform: translateY(-5px);
+  text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+}
+
+.triangle-logo {
+  color: #ff8c42;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .impact-title, .wins-title {
+    font-size: 2.2rem;
+  }
+  
+  .impact-stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .impact-number {
+    font-size: 2.5rem;
+  }
+  
+  .brand-logos {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .brand-logo {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-numbers-section, .collective-wins-section {
+    padding: 4rem 1rem;
+  }
+  
+  .impact-title, .wins-title {
+    font-size: 1.8rem;
+  }
+  
+  .impact-number {
+    font-size: 2rem;
+  }
+  
+  .brand-logo {
+    font-size: 1.2rem;
+  }
+}
+
 /* Video Reviews Section */
 .video-reviews-section {
   padding: 4rem 2rem;

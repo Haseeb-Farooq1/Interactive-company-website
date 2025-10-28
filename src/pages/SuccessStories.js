@@ -103,6 +103,61 @@ const SuccessStories = () => {
         <p className="hero-tagline">Let us be your exclusive partner and buy your inventory in bulk.</p>
       </div>
 
+      {/* Our Impact By Numbers Section */}
+      <div className="impact-numbers-section">
+        <h2 className="impact-title">OUR IMPACT BY THE NUMBERS</h2>
+        <div className="impact-stats-container">
+          <div className="flowing-line">
+            <svg className="wave-line" viewBox="0 0 800 200" preserveAspectRatio="none">
+              <path d="M0,100 Q200,50 400,100 T800,100" stroke="url(#orangeGradient)" strokeWidth="4" fill="none"/>
+              <defs>
+                <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#ff6b35"/>
+                  <stop offset="50%" stopColor="#ff8c42"/>
+                  <stop offset="100%" stopColor="#ffa500"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div className="impact-stats">
+            <div className="impact-stat">
+              <div className="impact-number">12.7M</div>
+              <div className="impact-label">Inventory we have bought</div>
+            </div>
+            <div className="impact-stat">
+              <div className="impact-number">99.7%</div>
+              <div className="impact-label">Positive Seller Rating</div>
+            </div>
+            <div className="impact-stat">
+              <div className="impact-number">31+</div>
+              <div className="impact-label">Brand Partners</div>
+            </div>
+            <div className="impact-stat">
+              <div className="impact-number">1.2M+</div>
+              <div className="impact-label">Units processed annually</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Collective Wins Section */}
+      <div className="collective-wins-section">
+        <h2 className="wins-title">OUR COLLECTIVE WINS</h2>
+        <p className="wins-subtitle">Every name here represents a shared success story.</p>
+        <div className="brands-container">
+          <div className="brand-logos">
+            <div className="brand-logo">MAM</div>
+            <div className="brand-logo">EIN</div>
+            <div className="brand-logo">⚙ BOMBYLN</div>
+            <div className="brand-logo">RSV</div>
+            <div className="brand-logo">MXL</div>
+            <div className="brand-logo">ANLO</div>
+            <div className="brand-logo triangle-logo">▲ ANLO</div>
+            <div className="brand-logo">KAAT</div>
+          </div>
+        </div>
+      </div>
+
       {/* Video Reviews Section */}
       <div className="video-reviews-section">
         <h2>Client Testimonials</h2>

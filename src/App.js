@@ -7,7 +7,6 @@ import Hero from './components/Hero';
 import BrandBand from './components/BrandBand';
 import Stats from './components/Stats';
 import BusinessModel from './components/BusinessModel';
-import PartnerBanner from './components/PartnerBanner';
 import Footer from './components/Footer';
 import Services from './pages/Services';
 import ScalonicsPromise from './pages/ScalonicsPromise';
@@ -28,7 +27,6 @@ function App() {
                 <BrandBand />
                 <Stats />
                 <BusinessModel />
-                <PartnerBanner />
               </>
             } />
             <Route path="/services" element={<Services />} />

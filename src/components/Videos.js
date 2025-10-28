@@ -1,47 +1,38 @@
 import React from 'react';
 import './Videos.css';
 
-const brands = [
-  'MAM', 'EIN', 'BOMBYLN', 'RSV', 'MXL', 'ANLO', 'ANLO', 'KAAT',
-  'Amazon', 'Nike', 'Apple', 'Google', 'Microsoft',
-  'Samsung', 'Tesla', 'Netflix', 'Spotify', 'Adobe'
+const videoData = [
+  {
+    id: 'dQw4w9WgXcQ', // Example video ID (Rick Astley)
+    title: 'Understanding E-commerce Growth',
+  },
+  {
+    id: '3tmd-ClpJxA', // Example video ID (SpaceX)
+    title: 'Our AI in Action',
+  },
+  {
+    id: 'vO_Ie3kMXbY', // Example video ID (Nature)
+    title: 'Client Success Story',
+  },
 ];
 
 const Videos = () => {
   return (
     <div className="videos-section">
-      {/* Our Collective Wins Section */}
-      <div className="collective-wins-section">
-        <h2 className="collective-wins-title">OUR COLLECTIVE WINS</h2>
-        <p className="collective-wins-subtitle">Every name here represents a shared success story.</p>
-        
-        <div className="brands-container">
-          {/* Stars Background */}
-          <div className="stars-background">
-            {[...Array(50)].map((_, i) => (
-              <div 
-                key={i} 
-                className="star" 
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`
-                }}
-              ></div>
-            ))}
+      <h2 className="videos-section-title">Learn More About Us</h2>
+      <div className="videos-container">
+        {videoData.map((video) => (
+          <div className="video-wrapper" key={video.id}>
+            <iframe
+              src={`https://www.youtube.com/embed/${video.id}`}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <h3>{video.title}</h3>
           </div>
-          
-          <div className="neon-light"></div>
-          <div className="brands-scroll">
-            <div className="brands-track">
-              {[...brands, ...brands, ...brands].map((brand, index) => (
-                <div className="brand-item" key={index}>
-                  {brand}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

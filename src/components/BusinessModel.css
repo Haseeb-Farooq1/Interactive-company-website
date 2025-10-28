@@ -1,91 +1,95 @@
-﻿.business-model-section {
-  width: 100%;
+.business-model-section {
   background: transparent;
-  padding: 6rem 2rem 8rem;
   position: relative;
+  padding: 2rem 2rem 4rem 2rem;
   overflow: hidden;
+  min-height: 600px;
 }
 
 .business-model-title {
   text-align: center;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
   margin-bottom: 4rem;
-  letter-spacing: 0.5px;
-  line-height: 1.3;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  color: white;
+  background: linear-gradient(45deg, #ffffff 0%, #f8f9fa 50%, #ff8c00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
 }
 
 .business-cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding: 0 2rem;
 }
 
 .business-card {
-  background: linear-gradient(180deg, #0a0e1a 0%, #0f1318 100%);
-  border: 2px solid rgba(255, 102, 0, 0.4);
-  border-radius: 20px;
-  padding: 0;
   position: relative;
-  overflow: hidden;
-  cursor: pointer;
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 140, 0, 0.3);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
   transition: all 0.4s ease;
+  overflow: hidden;
 }
 
 .business-card:hover {
-  border-color: rgba(255, 102, 0, 0.8);
-  box-shadow: 0 10px 40px rgba(255, 102, 0, 0.3);
-  transform: translateY(-5px);
+  border-color: rgba(255, 140, 0, 0.8);
+  box-shadow: 0 20px 60px rgba(255, 140, 0, 0.4);
+  transform: translateY(-10px);
 }
 
 .card-glow {
   position: absolute;
-  inset: -2px;
-  background: linear-gradient(135deg, #ff6600, #ff8800);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, transparent 70%);
   opacity: 0;
-  z-index: -1;
-  filter: blur(20px);
   transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .business-card:hover .card-glow {
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .card-number {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
   font-size: 6rem;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.05);
-  z-index: 1;
+  color: rgba(255, 140, 0, 0.15);
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   line-height: 1;
+  z-index: 1;
 }
 
 .card-visual-section {
-  width: 100%;
-  height: 350px;
-  background: rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid rgba(255, 102, 0, 0.2);
-  position: relative;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  margin-bottom: 2rem;
+  min-height: 250px;
+  position: relative;
 }
 
-/* CARD 1 - CHAOS CONTROL */
+/* CARD 1: Chaos Control Visuals */
 .visual-chaos {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,46 +97,61 @@
 
 .chaos-center {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .dollar-icon {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 900;
   color: #ff6600;
-  z-index: 5;
-  text-shadow: 0 0 40px rgba(255, 102, 0, 0.8);
-  animation: pulse-glow 2s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+  z-index: 10;
+  animation: dollarPulse 2s ease-in-out infinite;
+}
+
+@keyframes dollarPulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 50px rgba(255, 102, 0, 1);
+  }
 }
 
 .orbit {
   position: absolute;
-  border: 2px solid rgba(255, 102, 0, 0.3);
+  border: 2px solid rgba(255, 140, 0, 0.4);
   border-radius: 50%;
-  animation: spin 8s linear infinite;
+  animation: rotateOrbit 10s linear infinite;
 }
 
 .orbit {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
 }
 
 .orbit-2 {
-  width: 190px;
-  height: 190px;
-  animation-duration: 12s;
+  width: 150px;
+  height: 150px;
+  animation-duration: 15s;
   animation-direction: reverse;
 }
 
 .orbit-3 {
-  width: 240px;
-  height: 240px;
-  animation-duration: 16s;
-  border-color: rgba(255, 102, 0, 0.2);
+  width: 180px;
+  height: 180px;
+  animation-duration: 20s;
+}
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .floating-elements {
@@ -143,9 +162,9 @@
 
 .float-elem {
   position: absolute;
-  width: 36px;
-  height: 36px;
-  animation: float-around 6s ease-in-out infinite;
+  width: 30px;
+  height: 30px;
+  animation: floatAround 8s ease-in-out infinite;
 }
 
 .float-elem svg {
@@ -155,50 +174,56 @@
 }
 
 .float-1 {
-  top: 5%;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  animation-delay: 0s;
 }
 
 .float-2 {
   top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
-  animation-delay: 1.5s;
+  right: 0;
+  animation-delay: 2s;
 }
 
 .float-3 {
-  bottom: 5%;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 
 .float-4 {
   top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  animation-delay: 4.5s;
+  left: 0;
+  animation-delay: 6s;
+}
+
+@keyframes floatAround {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.2);
+    opacity: 1;
+  }
 }
 
 .control-label {
   position: absolute;
-  bottom: 30px;
-  background: rgba(255, 102, 0, 0.15);
-  border: 1px solid rgba(255, 102, 0, 0.5);
-  padding: 0.6rem 2rem;
-  border-radius: 25px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 0.9rem;
   font-weight: 700;
   color: #ff6600;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
-/* CARD 2 - SCALE */
+/* CARD 2: Scale Conveyor Visuals */
 .visual-scale {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,337 +233,258 @@
 
 .conveyor {
   position: relative;
-  width: 80%;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.amazon-package {
-  width: 120px;
-  height: 120px;
-  background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
-  border: 3px solid #ff9900;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(90deg, 
+    rgba(255, 140, 0, 0.1) 0%,
+    rgba(255, 140, 0, 0.3) 50%,
+    rgba(255, 140, 0, 0.1) 100%
+  );
+  border: 2px solid rgba(255, 140, 0, 0.4);
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 3;
-  animation: package-hover 2s ease-in-out infinite;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 153, 0, 0.3);
-}
-
-.amazon-smile {
-  width: 80%;
-  height: auto;
-  margin-bottom: 5px;
-}
-
-.package-text {
-  font-weight: 700;
-  color: #ff9900;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  overflow: hidden;
 }
 
 .conveyor-glow {
   position: absolute;
-  bottom: 20px;
-  left: 0;
   width: 100%;
-  height: 6px;
+  height: 4px;
   background: linear-gradient(90deg, 
-    transparent,
-    rgba(255, 102, 0, 0.4) 20%,
-    rgba(255, 102, 0, 1) 50%,
-    rgba(255, 102, 0, 0.4) 80%,
-    transparent
+    transparent 0%,
+    #ff6600 50%,
+    transparent 100%
   );
-  border-radius: 3px;
-  animation: conveyor-move 2s linear infinite;
-  box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+  bottom: 10px;
+  animation: conveyorMove 3s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+}
+
+@keyframes conveyorMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+.amazon-package {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.amazon-smile {
+  width: 100px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.package-text {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff9900;
+  text-transform: lowercase;
 }
 
 .process-steps {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .step {
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 102, 0, 0.1);
-  border: 2px solid rgba(255, 102, 0, 0.3);
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 102, 0, 0.2);
+  border: 2px solid rgba(255, 102, 0, 0.5);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  animation: step-pulse 2s ease-in-out infinite;
+  animation: stepPulse 2s ease-in-out infinite;
+}
+
+.step:nth-child(2) { animation-delay: 0.5s; }
+.step:nth-child(3) { animation-delay: 1s; }
+.step:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes stepPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
+    border-color: rgba(255, 102, 0, 1);
+  }
 }
 
 .step svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.4));
-}
-
-.step:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.step:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.step:nth-child(4) {
-  animation-delay: 0.9s;
+  width: 24px;
+  height: 24px;
 }
 
 .shield-icon {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 102, 0, 0.15);
-  border: 2px solid rgba(255, 102, 0, 0.6);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
+  bottom: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  animation: shieldFloat 3s ease-in-out infinite;
 }
 
 .shield-icon svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.6));
+  filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.6));
 }
 
-/* CARD 3 - GROWTH */
+@keyframes shieldFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* CARD 3: Growth Arrow Visuals */
 .visual-growth {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .growth-arrow-container {
-  width: 70%;
-  height: 60%;
   position: relative;
+  width: 200px;
+  height: 200px;
 }
 
 .growth-arrow-svg {
   width: 100%;
   height: 100%;
-  animation: arrow-draw 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 102, 0, 0.6));
+  animation: arrowGlow 2s ease-in-out infinite;
+}
+
+@keyframes arrowGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(255, 102, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(255, 102, 0, 1));
+  }
 }
 
 .dollar-growth {
   position: absolute;
-  top: 30%;
-  right: 20%;
-  font-size: 6rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
   font-weight: 900;
   color: #ff6600;
-  opacity: 0.6;
   text-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
-  animation: pulse-glow 2s ease-in-out infinite;
+  z-index: 5;
+  animation: dollarRotate 4s ease-in-out infinite;
+}
+
+@keyframes dollarRotate {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(15deg) scale(1.1);
+  }
 }
 
 .badge {
   position: absolute;
+  background: rgba(255, 102, 0, 0.9);
+  border: 2px solid #ff6600;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 102, 0, 0.1);
-  border: 2px solid rgba(255, 102, 0, 0.5);
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  animation: badge-pulse 2s ease-in-out infinite;
+  gap: 0.4rem;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+  animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.profit-badge {
+  top: 20px;
+  right: 20px;
+}
+
+.mission-badge {
+  bottom: 20px;
+  right: 20px;
+  animation-delay: 1.5s;
+}
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .badge-icon-svg {
-  width: 24px;
-  height: 24px;
-  filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.6));
+  width: 18px;
+  height: 18px;
 }
 
 .badge-text {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #ff6600;
-  letter-spacing: 2px;
+  color: white;
+  letter-spacing: 1px;
 }
 
-.profit-badge {
-  top: 30px;
-  left: 30px;
-}
-
-.mission-badge {
-  bottom: 30px;
-  right: 30px;
-  animation-delay: 1s;
-}
-
-/* CARD CONTENT */
+/* Card Content Styling */
 .card-content {
-  padding: 2.5rem 2rem 2rem;
+  position: relative;
+  z-index: 5;
 }
 
 .card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .card-description {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
 }
 
-/* ANIMATIONS */
-@keyframes pulse-glow {
-  0%, 100% {
-    text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 40px rgba(255, 102, 0, 1);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes float-around {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.6;
-  }
-  25% {
-    transform: translate(10px, -10px) scale(1.1);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(20px, 0) scale(1);
-    opacity: 0.6;
-  }
-  75% {
-    transform: translate(10px, 10px) scale(1.1);
-    opacity: 1;
-  }
-}
-
-@keyframes package-hover {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes conveyor-move {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes step-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
-
-@keyframes arrow-draw {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes badge-pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
+/* Responsive Design */
+@media (max-width: 1200px) {
   .business-cards-container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    max-width: 600px;
+    gap: 2rem;
+  }
+  
+  .business-card {
+    min-height: 450px;
   }
 }
 
 @media (max-width: 768px) {
-  .business-model-section {
-    padding: 4rem 1.5rem 6rem;
-  }
-
   .business-model-title {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
   }
-
+  
   .card-number {
     font-size: 4rem;
   }
-
+  
   .card-visual-section {
-    height: 280px;
-  }
-
-  .chaos-center {
-    width: 160px;
-    height: 160px;
-  }
-
-  .dollar-icon {
-    font-size: 3.5rem;
-  }
-
-  .float-elem {
-    width: 28px;
-    height: 28px;
-  }
-
-  .shield-icon {
-    width: 55px;
-    height: 55px;
-  }
-
-  .dollar-growth {
-    font-size: 4rem;
+    min-height: 200px;
   }
 }

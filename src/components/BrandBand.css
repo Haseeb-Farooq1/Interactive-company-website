@@ -1,91 +1,102 @@
-﻿.brand-showcase-section {
+.brand-showcase-section {
   width: 100%;
-  background: transparent;
-  padding: 5rem 0;
+  background: #0a0a0a;
+  padding: 6rem 0;
   position: relative;
   overflow: hidden;
 }
 
-.collective-wins-section {
-  padding: 0 2rem;
-  color: #fff;
-  text-align: center;
-  position: relative;
-}
-
-.collective-wins-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 2;
-}
-
-.collective-wins-subtitle {
-  font-size: 1.2rem;
-  color: #b0b0b0;
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 2;
-}
-
-.brands-container {
-  position: relative;
-  width: 100%;
-  padding: 3rem 0;
-  overflow: hidden;
-}
-
-.neon-light {
+/* Neon glow background effect */
+.neon-glow-background {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  height: 150%;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 120, 0, 0.2) 20%, rgba(255, 102, 0, 0.8) 50%, rgba(255, 120, 0, 0.2) 80%, transparent 100%);
-  filter: blur(40px);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, 
+    rgba(255, 140, 0, 0.15) 0%,
+    rgba(255, 140, 0, 0.08) 30%,
+    rgba(255, 140, 0, 0.03) 50%,
+    transparent 70%
+  );
+  filter: blur(60px);
   z-index: 1;
-  pointer-events: none;
-  animation: neonPulse 4s ease-in-out infinite;
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    opacity: 0.5;
-    filter: blur(40px);
+@keyframes pulseGlow {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
   }
-  50% {
-    opacity: 1;
-    filter: blur(50px);
+  50% { 
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
 
-.brands-scroll {
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
   position: relative;
-  width: 100%;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.4);
-  border-top: 2px solid rgba(255, 102, 0, 0.3);
-  border-bottom: 2px solid rgba(255, 102, 0, 0.3);
-  display: flex;
-  align-items: center;
-  overflow: hidden;
   z-index: 2;
-  box-shadow: inset 0 2px 10px rgba(255, 102, 0, 0.2), 0 0 20px rgba(255, 102, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
 }
 
-.brands-track {
+.main-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.brands-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.scrolling-logos-wrapper {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, 
+    transparent 0%, 
+    black 10%, 
+    black 90%, 
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(to right, 
+    transparent 0%, 
+    black 10%, 
+    black 90%, 
+    transparent 100%
+  );
+}
+
+.scrolling-logos {
   display: flex;
-  align-items: center;
-  animation: scroll 40s linear infinite;
-  white-space: nowrap;
+  gap: 3rem;
+  animation: scrollBanner 30s linear infinite;
+  will-change: transform;
 }
 
-@keyframes scroll {
+@keyframes scrollBanner {
   0% {
     transform: translateX(0);
   }
@@ -94,59 +105,122 @@
   }
 }
 
-.brand-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 3.5rem;
-  font-size: 1.6rem;
+.scrolling-logos:hover {
+  animation-play-state: paused;
+}
+
+.brand-logo {
+  font-size: 2rem;
   font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
+  color: white;
   letter-spacing: 3px;
-  white-space: nowrap;
-  text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+  text-transform: uppercase;
   transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  padding: 0 1rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.brand-item:hover {
-  color: #ff6600;
-  text-shadow: 0 0 20px rgba(255, 102, 0, 0.8), 0 0 30px rgba(255, 102, 0, 0.6), 0 0 40px rgba(255, 102, 0, 0.4);
-  transform: scale(1.15);
+.brand-logo:hover {
+  color: #ff8c42;
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
 }
 
+.gear-logo {
+  color: #ff8c42;
+}
+
+.triangle-logo {
+  color: #ff8c42;
+}
+
+.flowing-underline {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-top: 1rem;
+}
+
+.glow-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(255, 107, 53, 0.3) 10%,
+    rgba(255, 140, 66, 0.8) 25%,
+    rgba(255, 165, 0, 1) 50%,
+    rgba(255, 140, 66, 0.8) 75%,
+    rgba(255, 107, 53, 0.3) 90%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  transform: translateY(-50%);
+  box-shadow: 
+    0 0 20px rgba(255, 140, 66, 0.8),
+    0 0 40px rgba(255, 140, 66, 0.6),
+    0 0 60px rgba(255, 140, 66, 0.4);
+  animation: flowingGlow 3s ease-in-out infinite;
+}
+
+@keyframes flowingGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(255, 140, 66, 0.8),
+      0 0 40px rgba(255, 140, 66, 0.6),
+      0 0 60px rgba(255, 140, 66, 0.4);
+    transform: translateY(-50%) scaleX(1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(255, 140, 66, 1),
+      0 0 60px rgba(255, 140, 66, 0.8),
+      0 0 90px rgba(255, 140, 66, 0.6);
+    transform: translateY(-50%) scaleX(1.02);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .brand-showcase-section {
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
-  .collective-wins-section {
-    padding: 0 1rem;
+  
+  .main-heading {
+    font-size: 2.2rem;
   }
-  .collective-wins-title {
-    font-size: 2rem;
-  }
-  .collective-wins-subtitle {
+  
+  .sub-heading {
     font-size: 1rem;
-    margin-bottom: 2rem;
   }
-  .brands-scroll {
-    height: 60px;
+  
+  .brand-logo {
+    font-size: 1.6rem;
   }
-  .brand-item {
-    font-size: 1.1rem;
-    padding: 0 2rem;
-  }
-  .neon-light {
-    width: 250px;
+  
+  .scrolling-logos {
+    gap: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .collective-wins-title {
-    font-size: 1.5rem;
+  .main-heading {
+    font-size: 1.8rem;
   }
-  .brand-item {
-    font-size: 0.9rem;
-    padding: 0 1.5rem;
+  
+  .brand-logo {
+    font-size: 1.3rem;
+  }
+  
+  .scrolling-logos {
+    gap: 1.5rem;
   }
 }

@@ -1,201 +1,38 @@
 .videos-section {
-  padding: 0;
+  padding: 4rem 2rem;
   background-color: transparent;
   text-align: center;
-}
-
-.collective-wins-section {
-  padding: 5rem 2rem;
-  background: transparent;
-  color: #fff;
-  overflow: hidden;
   position: relative;
-}
-
-/* Stars Background */
-.stars-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle 3s infinite;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
-}
-
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-}
-
-.collective-wins-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 2;
-}
-
-.collective-wins-subtitle {
-  font-size: 1.2rem;
-  color: #b0b0b0;
-  margin-bottom: 4rem;
-  position: relative;
-  z-index: 2;
-}
-
-.brands-container {
-  position: relative;
-  width: 100%;
-  padding: 3rem 0;
-  overflow: hidden;
-}
-
-/* Neon Light Effect */
-.neon-light {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 150%;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 120, 0, 0.2) 20%,
-    rgba(255, 102, 0, 0.8) 50%,
-    rgba(255, 120, 0, 0.2) 80%,
-    transparent 100%
-  );
-  filter: blur(40px);
   z-index: 1;
-  pointer-events: none;
-  animation: neonPulse 4s ease-in-out infinite;
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    opacity: 0.5;
-    filter: blur(40px);
-  }
-  50% {
-    opacity: 1;
-    filter: blur(50px);
-  }
+.videos-section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
 }
 
-.brands-scroll {
-  position: relative;
-  width: 100%;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.4);
-  border-top: 2px solid rgba(255, 102, 0, 0.3);
-  border-bottom: 2px solid rgba(255, 102, 0, 0.3);
+.videos-container {
   display: flex;
-  align-items: center;
-  overflow: hidden;
-  z-index: 2;
-  box-shadow: 
-    inset 0 2px 10px rgba(255, 102, 0, 0.2),
-    0 0 20px rgba(255, 102, 0, 0.1);
-}
-
-.brands-track {
-  display: flex;
-  align-items: center;
-  animation: scroll 40s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.33%);
-  }
-}
-
-.brand-item {
-  display: inline-flex;
-  align-items: center;
   justify-content: center;
-  padding: 0 3.5rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  white-space: nowrap;
-  text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
-  transition: all 0.3s ease;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.brand-item:hover {
-  color: #ff6600;
-  text-shadow: 
-    0 0 20px rgba(255, 102, 0, 0.8),
-    0 0 30px rgba(255, 102, 0, 0.6),
-    0 0 40px rgba(255, 102, 0, 0.4);
-  transform: scale(1.15);
+.video-wrapper {
+  max-width: 560px;
+  width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .collective-wins-section {
-    padding: 3rem 1rem;
-  }
-
-  .collective-wins-title {
-    font-size: 2rem;
-  }
-
-  .collective-wins-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .brands-scroll {
-    height: 60px;
-  }
-
-  .brand-item {
-    font-size: 1.1rem;
-    padding: 0 2rem;
-  }
-
-  .neon-light {
-    width: 250px;
-  }
+.video-wrapper iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 480px) {
-  .collective-wins-title {
-    font-size: 1.5rem;
-  }
-
-  .brand-item {
-    font-size: 0.9rem;
-    padding: 0 1.5rem;
-  }
+.video-wrapper h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #444;
 }
-
-

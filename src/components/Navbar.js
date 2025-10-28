@@ -50,6 +50,7 @@ const Navbar = () => {
           </div>
         </li>
         <li><Link to="/scalonics-promise">Scalonics Promise</Link></li>
+        <li><Link to="/success-stories">Success Stories</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
       </ul>
